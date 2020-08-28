@@ -1,4 +1,3 @@
-# DataStructure-Algorithm
-sliding-windows——滑动窗口
+# sliding-windows——滑动窗口
 
 
