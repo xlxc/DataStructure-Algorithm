@@ -60,7 +60,7 @@ public class MaxSlidingWindow {
             if (R - k == qMax.peekFirst()) {
                 qMax.pollFirst();
             }
-            // 给res 数组赋值
+            // 当滑动窗口的大小满足给定的k的时候，就给res 数组赋值
             if (R - k >= -1) {
                 // 注意队列中存储的是下标
                 res[index++] = nums[qMax.peekFirst()];
