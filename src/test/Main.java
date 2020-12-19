@@ -3,6 +3,7 @@ package test;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -47,6 +48,8 @@ public class Main {
         int[] arr = new int[] {1, 2, 3};
         int[] copy = Arrays.copyOf(arr, arr.length);
         System.out.println(Arrays.toString(copy));
+
+        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap<>();
 
     }
 }
