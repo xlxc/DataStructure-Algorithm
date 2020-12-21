@@ -1,10 +1,7 @@
 package test;
 
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * @author: xuejing
@@ -50,6 +47,7 @@ public class Main {
         System.out.println(Arrays.toString(copy));
 
         ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap<>();
+
 
     }
 }
