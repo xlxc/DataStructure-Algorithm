@@ -1,12 +1,9 @@
 package bfs;
 
-import sun.reflect.generics.tree.Tree;
 import utils.TreeNode;
 
-import javax.management.QueryEval;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.TreeMap;
 
 /**
  * @author: xuejing
