@@ -1,5 +1,6 @@
 package backtracking;
 
+import java.awt.font.NumericShaper;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +36,7 @@ public class Solution_842 {
         return res;
     }
 
+    // index 表示所到达的数组中的下标
     private boolean dfs(char[] array, List<Integer> res, int index) {
         // base case
         // 因为题目要求的答案只有一种结果，且斐波拉契数列的定义是元素的个数是要大于3
@@ -42,6 +44,37 @@ public class Solution_842 {
             return true;
         }
         // 深度优先搜索
+        long currNum = 0;
+        // index 可以看成是 递归树的某一层上，i 在 index 的基础上不断地向下搜索
+        for (int i = index; i < array.length; i++) {
+            // 首先，当拆分的数字大于两位时，其头部不能是0
+            if (array[index] == '0' && i > index) {
+                break;
+            }
+            // 截取字符串转换成数字
+            currNum = currNum * 10 + array[i] - '0';
+            // 如果数字大于 int 的最大值，也要去掉
+            if (currNum > Integer.MAX_VALUE) {
+                break;
+            }
+            int curr = (int)currNum;
+            // 如果截取的数字大于 res 中前两个数字的和，说明这次截取的太大了，直接终止
+            int size = res.size();
+            if (size >= 2 && curr > res.get(size - 1) + res.get(size - 2)) {
+                break;
+            }
+            // 当 res 中的个数不足两个，或者截取的数刚好等于 前两个数字的和，就加入 res 中
+            if (size < 2 || curr == res.get(size - 1) + res.get(size - 2)) {
+                // 把数字添加到 res 中
+                res.add(curr);
+                // 如果找到了就直接返回
+                if (dfs(array, res, i + 1)) {
+                    return true;
+                }
+                // 如果没找到，就要回溯到上一步，把上一步的添加到 res 中的元素删除
+                res.remove(res.size() - 1);
+            }
+        }
         return false;
     }
 
