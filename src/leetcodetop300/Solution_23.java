@@ -1,8 +1,7 @@
-package leetcodetop150;
+package leetcodetop300;
 
 import utils.ListNode;
 
-import java.util.List;
 import java.util.PriorityQueue;
 
 /**

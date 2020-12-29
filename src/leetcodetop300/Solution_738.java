@@ -1,6 +1,4 @@
-package leetcodetop150;
-
-import sun.util.locale.provider.FallbackLocaleProviderAdapter;
+package leetcodetop300;
 
 /**
  * @author: xuejing

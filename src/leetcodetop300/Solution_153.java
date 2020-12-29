@@ -1,6 +1,4 @@
-package leetcodetop150;
-
-import org.omg.DynamicAny._DynUnionStub;
+package leetcodetop300;
 
 /**
  * @author: xuejing

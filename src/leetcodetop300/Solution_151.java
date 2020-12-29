@@ -1,6 +1,4 @@
-package leetcodetop150;
-
-import sun.security.util.Length;
+package leetcodetop300;
 
 /**
  * @author: xuejing
