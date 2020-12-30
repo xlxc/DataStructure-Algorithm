@@ -1,4 +1,4 @@
-package listnode;
+package linkedlist;
 
 import sun.security.krb5.Config;
 import utils.TreeNode;
