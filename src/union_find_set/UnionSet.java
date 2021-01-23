@@ -34,20 +34,7 @@ public class UnionSet {
     }
 
     /**
-     * Union：合并两个集合
-     */
-    public void union(int x, int y) {
-        int rootX = find(x);
-        int rootY = find(y);
-        // 只有当两个节点的祖先祖先不相同的时候就将其合并
-        if (rootX != rootY) {
-            // 将x节点合并到节点y中，只要将x的祖先节点变成y即可
-            father.put(rootX, rootY);
-        }
-    }
-
-    /**
-     * Find：从集合中查找该节点的祖先
+     * Find：从集合中查找该节点的祖先，同时需要将整个树打成扁平
      */
     public int find(int x) {
         // 首先找到节点x的祖先节点
@@ -62,6 +49,19 @@ public class UnionSet {
             x = originalFather;
         }
         return root;
+    }
+
+    /**
+     * Union：合并两个集合
+     */
+    public void union(int x, int y) {
+        int rootX = find(x);
+        int rootY = find(y);
+        // 只有当两个节点的祖先祖先不相同的时候就将其合并
+        if (rootX != rootY) {
+            // 将x节点合并到节点y中，只要将x的祖先节点变成y即可
+            father.put(rootX, rootY);
+        }
     }
 
     /**
