@@ -17,10 +17,16 @@ public class UnionSet {
     private Map<Integer, Integer> father;
 
     /**
+     * 记录连通分量
+     */
+    private int size;
+
+    /**
      * 构造函数
      */
     public UnionSet() {
         father = new HashMap<>();
+        size = 0;
     }
 
     /**
@@ -30,6 +36,7 @@ public class UnionSet {
         // 在一个节点加入并查集的时候，该节点的父节点是空的，只有两个节点进行 union 合并时才会有父节点
         if (!father.containsKey(x)) {
             father.put(x, null);
+            size++;
         }
     }
 
@@ -61,13 +68,22 @@ public class UnionSet {
         if (rootX != rootY) {
             // 将x节点合并到节点y中，只要将x的祖先节点变成y即可
             father.put(rootX, rootY);
+            size--;
         }
     }
 
     /**
      * 查看两个节点是否连通：是否是同一个祖先
      */
-    public boolean isConnected(int x, int y) {
+    public boolean isSameSet(int x, int y) {
         return find(x) == find(y);
     }
+
+    /**
+     * 计算并查集中有多少个不同的连通数
+     */
+    public int getConnected() {
+        return size;
+    }
+
 }
