@@ -86,5 +86,4 @@ public class UnionSet {
     public int getConnected() {
         return size;
     }
-
 }
