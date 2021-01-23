@@ -1,7 +1,6 @@
 package union_find_set;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author: xuejing
@@ -9,17 +8,18 @@ import java.util.Map;
  * 并查集模板类
  * https://leetcode-cn.com/problems/number-of-provinces/solution/python-duo-tu-xiang-jie-bing-cha-ji-by-m-vjdr/
  */
-public class UnionFindTemplate {
+public class UnionSet {
 
     /**
-     * 每个节点都会记录其父节点
+     * 每个节点都会记录其父节
+     * key：当前节点，value：当前节点的父亲节点
      */
     private Map<Integer, Integer> father;
 
     /**
      * 构造函数
      */
-    public UnionFindTemplate() {
+    public UnionSet() {
         father = new HashMap<>();
     }
 
@@ -36,11 +36,12 @@ public class UnionFindTemplate {
     /**
      * Union：合并两个集合
      */
-    public void merge(int x, int y) {
+    public void union(int x, int y) {
         int rootX = find(x);
         int rootY = find(y);
         // 只有当两个节点的祖先祖先不相同的时候就将其合并
         if (rootX != rootY) {
+            // 将x节点合并到节点y中，只要将x的祖先节点变成y即可
             father.put(rootX, rootY);
         }
     }
