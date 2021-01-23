@@ -11,7 +11,7 @@ import java.util.*;
 public class UnionSet {
 
     /**
-     * 每个节点都会记录其父节
+     * 每个节点都会记录其父亲节点
      * key：当前节点
      * value：当前节点的父亲节点
      */
