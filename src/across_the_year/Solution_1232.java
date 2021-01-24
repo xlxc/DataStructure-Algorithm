@@ -1,8 +1,5 @@
 package across_the_year;
 
-import javafx.util.Pair;
-import leetcodetop300.Solution_830;
-
 /**
  * @author: xuejing
  * @date: 2021/01/17 10:30
@@ -15,44 +12,23 @@ import leetcodetop300.Solution_830;
  */
 public class Solution_1232 {
 
-    // 首先使用两个点来确定一个直线方程，然后将其他的点代入直线方程即可知道是不是这个方程
     public boolean checkStraightLine(int[][] coordinates) {
-        if (coordinates == null || coordinates.length < 2) {
+        if (coordinates == null || coordinates.length < 3) {
             return true;
         }
-        double[] kb = getFum(coordinates[0][0], coordinates[0][1], coordinates[1][0], coordinates[1][1]);
+        // 假设前两个点是固定的，先计算出前两个点的斜率，然后依次计算其余的点与第一个点所构成的斜率是否与这个相同即可
+        int x0 = coordinates[0][0];
+        int y0 = coordinates[0][1];
+        int x1 = coordinates[1][0];
+        int y1 = coordinates[1][1];
         for (int i = 2; i < coordinates.length; i++) {
-            if (!isFum(kb[0], kb[1], coordinates[i][0], coordinates[i][1])) {
+            int xi = coordinates[i][0];
+            int yi = coordinates[i][1];
+            if ((y1 - y0) * (xi - x0) != (x1 - x0) * (yi - y0)) {
                 return false;
             }
         }
         return true;
     }
 
-    /**
-     * 根据两个点来确定一个方程
-     */
-    private double[] getFum(int x1, int y1, int x2, int y2) {
-        double[] res = new double[2];
-        res[0] = (y2 - y1) * 1.0 / (x2 - x1);
-        res[1] = y1 - res[0] * x1;
-        return res;
-    }
-
-    /**
-     * 对于一个一次方程 y=kx+b,我们只需要确定 k 和 b，就知道了方程的表达式
-     *
-     * @return
-     */
-    private boolean isFum(double k, double b, int x, int y) {
-        double tempY = k * x + b;
-        return tempY == y;
-    }
-
-    public static void main(String[] args) {
-        Solution_1232 sol = new Solution_1232();
-        int[][] a = {{0,0}, {0, 1}, {0, -1}};
-        sol.checkStraightLine(a);
-
-    }
 }
