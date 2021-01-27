@@ -76,7 +76,7 @@ public class UnionSet {
     /**
      * 查看两个节点是否连通：是否是同一个祖先
      */
-    public boolean isSameSet(int x, int y) {
+    public boolean isConnected(int x, int y) {
         return find(x) == find(y);
     }
 
