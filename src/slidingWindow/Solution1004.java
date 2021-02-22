@@ -1,4 +1,4 @@
-package leetcodetop300;
+package slidingWindow;
 
 /**
  * @author: xuejing

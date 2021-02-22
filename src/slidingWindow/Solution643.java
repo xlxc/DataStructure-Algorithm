@@ -1,7 +1,4 @@
-package leetcodetop300;
-
-import javax.script.ScriptContext;
-import java.util.Scanner;
+package slidingWindow;
 
 /**
  * @author: xuejing
