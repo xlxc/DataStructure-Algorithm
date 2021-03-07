@@ -1,7 +1,5 @@
 package leetcodetop500;
 
-import sun.plugin.javascript.navig.Array;
-
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
