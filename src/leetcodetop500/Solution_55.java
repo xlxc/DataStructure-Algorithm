@@ -18,7 +18,7 @@ public class Solution_55 {
             return true;
         }
         int maxReach = nums[0];
-        for (int i = 1; i < nums.length - 1; i++) {
+        for (int i = 1; i <= nums.length - 2; i++) {
             // 当前位置i，它可以跳到的的位置最多是：当前的数组下标 + 该元素值
             // 注意：如果此时不能跳到下一个，则无法更新
             if (maxReach < i) {
