@@ -42,7 +42,6 @@ public class Solution_131 {
             dfs(charArrays, i + 1, path, res);
             path.removeLast();
         }
-
     }
 
     /**

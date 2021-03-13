@@ -16,12 +16,12 @@ public class Solution_31 {
     // 题目要求是从只能在原数组上进行操作，不能使用额外的数组空间
     // 题目要求的是获得该排列的下一个较大的排列
     public void nextPermutation(int[] nums) {
-        if (nums == null || nums.length == 0) {
+        if (nums == null || nums.length < 2) {
             return;
         }
         // 从后相前遍历数组
 
-    }
 
+    }
 
 }
