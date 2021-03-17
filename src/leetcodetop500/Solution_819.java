@@ -1,5 +1,6 @@
 package leetcodetop500;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
@@ -28,10 +29,7 @@ public class Solution_819 {
         // 注意：这里最后 一定要人为拼接一个非字母，否则最后一个字符是统计不到的
         paragraph += ".";
         // 题目已经说明 禁用列表中的单词用小写字母表示，所以直接加入即可
-        Set<String> set = new HashSet<>();
-        for (String str : banned) {
-            set.add(str);
-        }
+        Set<String> set = new HashSet<>(Arrays.asList(banned));
         int maxCount = 0;
         String ans = "";
 
@@ -57,7 +55,6 @@ public class Solution_819 {
                 // 注意：这里一定要重置字符串
                 word = new StringBuilder();
             }
-
         }
         return ans;
     }
